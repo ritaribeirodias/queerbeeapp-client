@@ -1,16 +1,24 @@
 import * as React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Homepage = () => {
     return (
-        <Text>queerbee🌈</Text>
+      <View style={styles.homepage}>
+        <Text style={styles.logo}>queerbee🌈</Text>
+      </View>
     );
 };
 
 const styles = StyleSheet.create({
-  homepage: {
-    
+  homepage: { 
+    backgroundColor: "yellow",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+  },
+  logo: {
+    fontSize: 30,
   }
-})
+});
 
 export default Homepage;
