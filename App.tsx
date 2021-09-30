@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Homepage from './screens/HomepageScreen';
+import ProfileScreen from './screens/ProfileScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -15,12 +16,12 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaView>
-     
-        <Homepage></Homepage>
-       
-      
-      </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name ="Home" component={Homepage}></Stack.Screen>
+      <Stack.Screen name ="Profile" component={ProfileScreen}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
     );
   }
 }
