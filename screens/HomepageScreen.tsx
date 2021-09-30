@@ -1,27 +1,30 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import ProfileScreen from './ProfileScreen';
 
-const Homepage = () => {
+const Homepage = ({navigation}: any) => {
     return (
+      <View>
       <View style={styles.homepage}>
-        <TouchableOpacity onPress={() => {
-          navigation.navigate('ProfileScreen')
-        }}/> 
-        <Text style={styles.logo}>queerbee🌈</Text> 
+        <Button title="queerbee🌈" onPress={() => navigation.navigate('Profile')}/> 
       </View> 
+      </View>
     );
 };
 
 const styles = StyleSheet.create({
   homepage: { 
-    backgroundColor: "yellow",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
   },
   logo: {
     fontSize: 30,
+  },
+  text: {
+    fontSize: 30, 
+    color: "black"
   }
 });
 
