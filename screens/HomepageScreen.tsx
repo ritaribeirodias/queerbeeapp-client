@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Homepage = () => {
     return (
       <View style={styles.homepage}>
-        <Text style={styles.logo}>queerbee🌈</Text>
-      </View>
+        <TouchableOpacity onPress={() => {
+          navigation.navigate('ProfileScreen')
+        }}/> 
+        <Text style={styles.logo}>queerbee🌈</Text> 
+      </View> 
     );
 };
 
